@@ -7,7 +7,10 @@ function App() {
 
   return (
     <>
-      
+      <Navbar/>
+      <Routes>
+
+      </Routes>
     </>
   )
 }
