@@ -1,0 +1,55 @@
+.item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+}
+
+.image{
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.title{
+    width: 120px;
+    text-align: center;
+}
+
+.price{
+    width: 80px;
+    text-align: center;
+}
+
+.quantity{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.quantity span {
+    width: 50px;
+    text-align: center;
+}
+
+.btn{
+    border-radius: 100%;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--Dark_grayish_blue);
+    color: var(--White);
+    cursor: pointer;
+}
+
+.btnDel{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+

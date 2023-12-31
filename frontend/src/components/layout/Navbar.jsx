@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import styles from "./Navbar.module.css"
-import Cart from "./Cart.jsx"
-import Profile from "./Profile.jsx"
+import Cart from "../cart/Cart.jsx"
+import Profile from "../UI/Profile.jsx"
 
 const Navbar = ()=>{
 

@@ -1,0 +1,17 @@
+
+.btn{
+    padding: 10px 10px;
+    width: 250px;
+    align-self: center;
+    background-color: var(--Dark_grayish_blue);
+    color: var(--White);
+    font-size: large;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
