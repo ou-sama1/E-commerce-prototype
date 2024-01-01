@@ -17,6 +17,9 @@ const Cart = ()=>{
         <>
             <button onClick={toggleCart} className={styles.btn}>
                 <img src={cartIcon} className={styles.icon} />
+                {
+                    cartItems.length > 0 && <span className={styles.itemsCount}>{cartItems.length}</span>
+                }
             </button>
             <Modal close={toggleCart} display={display}>
                 <h3 className={styles.header}>Cart</h3>

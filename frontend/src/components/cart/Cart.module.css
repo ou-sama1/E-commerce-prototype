@@ -2,6 +2,22 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    position: relative;
+}
+
+.itemsCount{
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    right: -5px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
 }
 
 .icon{

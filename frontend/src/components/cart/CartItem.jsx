@@ -23,7 +23,7 @@ const CartItem = (props) => {
         <li className={styles.item}>
             <img src={image} alt={title} className={styles.image} />
             <h3 className={styles.title}>{title}</h3>
-            <span className={styles.price}>{price}</span>
+            <span className={styles.price}>{price.toFixed(2)}$</span>
             <div className={styles.quantity}>
                 <button onClick={incrementHandler} className={styles.btn}>+</button>
                 <span> {quantity} </span>
