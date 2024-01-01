@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import Product from "./Product.jsx";
 import styles from "./ProductsList.module.css";
+import useProducts from "../../hooks/useProducts.js";
 
 const ProductsList = () => {
-    const products = useSelector(state => state.products.products);
+    const products = useProducts();
 
     return(
         <ul className={styles.productsList}>
