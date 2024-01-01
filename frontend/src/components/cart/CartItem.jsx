@@ -1,10 +1,10 @@
 import styles from "./CartItem.module.css"
 import { useDispatch } from "react-redux";
-import { productsActions } from "../../store/productsSlice";
+import { cartActions } from "../../store/cartSlice";
 
 const CartItem = (props) => {
     const {id, title, image, price, quantity} = props.item;
-    const {incrementItem, decrementItem, deleteItem} = productsActions;
+    const {incrementItem, decrementItem, deleteItem} = cartActions;
     const dispatch = useDispatch();
 
     const incrementHandler = () => {

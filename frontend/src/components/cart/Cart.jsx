@@ -7,7 +7,7 @@ import CartItem from "./CartItem";
 import CheckoutBtn from "./CheckoutBtn.jsx";
 
 const Cart = ()=>{
-    const cartItems = useSelector(state => state.products.cart);
+    const cartItems = useSelector(state => state.cart.cart);
     const [display, setDisplay] = useState(false);
     const toggleCart = () => {
         setDisplay(prev => !prev);

@@ -1,12 +1,12 @@
 import styles from "./Product.module.css";
 import cartIcon from "../../images/icon-cart.svg";
 import { useDispatch } from "react-redux";
-import { productsActions } from "../../store/productsSlice";
+import { cartActions } from "../../store/cartSlice";
 
 const Product = (props) => {
     const dispatch = useDispatch();
     const {id, title, image, description, price} = props.product;
-    const {addToCart} = productsActions;
+    const {addToCart} = cartActions;
 
     const addHandler = () => {
         dispatch(addToCart({id, title, image, price}))
