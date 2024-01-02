@@ -1,10 +1,14 @@
 .navbar{
-    margin: 0 40px;
-    padding: 40px 5px;
+    margin: 0;
+    padding: 40px 40px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--Light_grayish_blue);
-  
+    width: 95vw;
+    height: 3vh;
+    position: sticky;
+    background-color: var(--White);
+    top: 0;
 }
 .brand{
     margin: 0 10px;
@@ -36,6 +40,10 @@
 }
 
 .link:hover::after{
+    transform: scaleX(1);
+}
+
+.link isactive::after{
     transform: scaleX(1);
 }
 
