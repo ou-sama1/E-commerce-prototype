@@ -10,8 +10,6 @@ const Navbar = ()=>{
             <div className={styles.links}>
                 <span className={styles.brand}>Sneakers</span>
                 <NavLink to="/" className={styles.link}>Collections</NavLink>
-                <NavLink to="/men" className={styles.link}>Men</NavLink>
-                <NavLink to="/women" className={styles.link}>Women</NavLink>
                 <NavLink to="/about" className={styles.link}>About</NavLink>
                 <NavLink to="/contact" className={styles.link}>Contact</NavLink>
             </div>

@@ -1,17 +1,33 @@
-import { useSelector, useDispatch } from "react-redux";
 import Product from "./Product.jsx";
 import styles from "./ProductsList.module.css";
 import useProducts from "../../hooks/useProducts.js";
+import Filter from "../filter/Filter.jsx";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
-const ProductsList = () => {
-    const products = useProducts();
+const ProductsList = (props) => {
+    const {category, gender, price} = useSelector(state => state.filter);
+    let products = useProducts();
 
     return(
-        <ul className={styles.productsList}>
-            {
-                products.map(product => <Product key={product.id} product={product} />)
-            }
-        </ul>
+        <div className={styles.container}>
+            <Filter />
+            <ul className={styles.productsList}>
+                {
+                    products
+                        .filter(
+                            product => (
+                                (product.category === (category || product.category))
+                                &&
+                                (product.gender === (gender || product.gender))
+                                &&
+                                ( price ? (product.price >= parseFloat(price.split("-")[0]) && product.price <= parseFloat(price.split("-")[1])) : true)
+                            )
+                        )
+                        .map(product => <Product key={product.id} product={product} />)
+                }
+            </ul>
+        </div>
     )
 }
 

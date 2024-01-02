@@ -1,0 +1,40 @@
+.filter{
+    min-width: 300px;
+    border: 1px solid var(--Light_grayish_blue);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px 15px;
+    height: 500px;
+}
+
+.header{
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.layers{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.layer{
+    padding-bottom: 10px;
+    border-top: 1px solid var(--Light_grayish_blue);
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;   
+}
+
+.price{
+    
+}
+
+.type{
+
+}

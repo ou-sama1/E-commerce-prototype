@@ -32,12 +32,15 @@
 
 .description{
     color: var(--Dark_grayish_blue);
+    height: 100px;
+    overflow: hidden;
 }
 
 .price{
     color: var(--Dark_grayish_blue);
     font-size: 1.2rem;
     font-weight: bold;
+    align-self: flex-end;
 }
 
 .add{
