@@ -1,0 +1,36 @@
+.productSkeleton{
+    padding: 0;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.imgSkeleton{
+    width: 100%;
+    height: 300px;
+}
+
+.titleSkeleton{
+    width: 60%;
+    font-size: 1.5rem;
+    align-self: center;
+    margin: 5px 0;
+}
+
+.paraSkeleton{
+    width: 90%;
+}
+
+.btnSkeleton{
+    height: 30px;
+    width: 90%;
+    margin: 10px 0;
+    padding: 6px 0;
+    border-radius: 5px;
+    align-self: center;
+}

@@ -46,6 +46,7 @@
 .add{
     display: block;
     width: 100%;
+    height: 30px;
     margin: 10px 0;
     padding: 6px 0;
     background-color: var(--Very_dark_blue);
@@ -54,6 +55,13 @@
     cursor: pointer;
     font-size: 1rem;
     border-radius: 5px;
+}
+
+.add div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .add:hover{

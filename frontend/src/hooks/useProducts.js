@@ -3,17 +3,29 @@ import { httpGetProducts } from "./requests";
 
 const useProducts = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(null);
+    const [error, setError] = useState(false);
 
     const getProducts = useCallback( async () => {
-        const fetchedProducts = await httpGetProducts();
-        setProducts(fetchedProducts);
+        setLoading(true);
+        try {
+            //Testing the loging state
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            
+            const fetchedProducts = await httpGetProducts();
+            setProducts(fetchedProducts);
+        } catch (error) {
+            setError(true);
+        }
+        setLoading(false);
+        
     }, [] );
 
     useEffect(() => {
         getProducts();
     }, [getProducts])
 
-    return products;
+    return {products, loading, error};
 }
 
 export default useProducts;

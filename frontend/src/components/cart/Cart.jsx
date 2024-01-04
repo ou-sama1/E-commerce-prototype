@@ -1,6 +1,6 @@
 import cartIcon from "../../images/icon-cart.svg";
 import styles from "./Cart.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../UI/Modal";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
@@ -9,13 +9,21 @@ import CheckoutBtn from "./CheckoutBtn.jsx";
 const Cart = ()=>{
     const cartItems = useSelector(state => state.cart.cart);
     const [display, setDisplay] = useState(false);
+    const [highlight, setHighlight] = useState(false);
     const toggleCart = () => {
         setDisplay(prev => !prev);
     }
 
+    useEffect(() => {
+        if(cartItems.length === 0) return;
+        setHighlight(true);
+        const timer = setTimeout(()=>setHighlight(false), 300);
+        return () => {clearTimeout(timer)};
+    }, [cartItems])
+
     return(
         <>
-            <button onClick={toggleCart} className={styles.btn}>
+            <button onClick={toggleCart} className={`${styles.btn} ${highlight ? styles.highlight : ""}`}>
                 <img src={cartIcon} className={styles.icon} />
                 {
                     cartItems.length > 0 && <span className={styles.itemsCount}>{cartItems.length}</span>
