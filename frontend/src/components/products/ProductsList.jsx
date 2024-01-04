@@ -16,7 +16,7 @@ const ProductsList = (props) => {
             <ul className={styles.productsList}>
 
                 {
-                    (loading && !products.length && !error) && Array(25).fill(0).map(_ => <ProductSkeleton />)
+                    (loading && !products.length && !error) && Array(25).fill(0).map((_ , i)=> <ProductSkeleton key={i} />)
                 }
                 {
                     (error && !products.length) && "An error occured."

@@ -1,6 +1,7 @@
 import styles from "./Filter.module.css";
 import { filterActions } from "../../store/filterSlice";
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -15,6 +16,13 @@ const Filter = () => {
     const priceHandler = (e) => {
         dispatch(setPrice(e.target.value))
     };
+
+    useEffect(() => {
+            dispatch(setCategory(""))
+            dispatch(setGender(""))
+            dispatch(setPrice(""))
+ 
+    }, [])
 
     return(
         <div className={styles.filter}>
