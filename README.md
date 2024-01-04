@@ -17,4 +17,11 @@ created using Vite for its fast development server ⚡
 - Filtering system to filter by category, gender and price <br>
 - Skeleton loading state <br>
 
-
+## Todo :
+- Filling the other routes <br>
+- Adding a carousel <br>
+- Adding pagination <br>
+- Adding a profile component <br>
+- Adding autentification for signing up to the website (might include a multiple steps form) <br>
+- Integrating MongoDB and saving the products and the accounts data in the database <br>
+- Making the website responsive <br>
