@@ -1,9 +1,9 @@
-const products = require("../../models/products.model");
+const { getProducts } = require("../../models/products/products.model");
 
-function getProducts(req, res){
-    res.status(200).json(products);
+async function HttpGetProducts(req, res){
+    res.status(200).json(await getProducts());
 };
 
 module.exports = {
-    getProducts,
+    HttpGetProducts,
 }

@@ -1,0 +1,14 @@
+{
+  "name": "e-commerce-prototype",
+  "version": "1.0.0",
+  "description": "- ReactJS <br>\r \t+ Redux toolkit <br>\r   \t+ React router dom <br>\r   \t+ React loading skeleton <br>\r   \t+ Custom hooks <br>\r - CSS modules <br>\r - NodeJS <br>\r - ExpressJS <br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oussama EL BACHIRI",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.4"
+  }
+}
