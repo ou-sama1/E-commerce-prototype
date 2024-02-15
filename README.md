@@ -9,6 +9,7 @@
 - CSS modules <br>
 - NodeJS <br>
 - ExpressJS <br>
+- MongoDB <br>
 
 created using Vite for its fast development server ⚡
 
@@ -23,5 +24,4 @@ created using Vite for its fast development server ⚡
 - Adding a carousel <br>
 - Adding a profile component <br>
 - Adding autentification for signing up to the website (might include a multiple steps form) <br>
-- Integrating MongoDB and saving the products and the accounts data in the database <br>
 - Making the website responsive <br>
