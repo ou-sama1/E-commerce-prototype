@@ -10,6 +10,7 @@
 - NodeJS <br>
 - ExpressJS <br>
 - MongoDB <br>
+- JWT <br>
 
 created using Vite for its fast development server ⚡
 
@@ -18,10 +19,10 @@ created using Vite for its fast development server ⚡
 - Filtering system to filter by category, gender and price <br>
 - Skeleton loading state <br>
 - Client side pagination <br>
+- Authentication <br>
 
 ## Todo :
 - Filling the other routes <br>
 - Adding a carousel <br>
 - Adding a profile component <br>
-- Adding autentification for signing up to the website (might include a multiple steps form) <br>
 - Making the website responsive <br>
