@@ -24,5 +24,4 @@ created using Vite for its fast development server ⚡
 ## Todo :
 - Filling the other routes <br>
 - Adding a carousel <br>
-- Adding a profile component <br>
 - Making the website responsive <br>
