@@ -2,6 +2,7 @@ import Product from "./Product.jsx";
 import styles from "./ProductsList.module.css";
 import useProducts from "../../hooks/useProducts.js";
 import Filter from "../filter/Filter.jsx";
+import Cover from '../layout/Cover.jsx'
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import ProductSkeleton from "./skeleton/ProductSkeleton.jsx";
@@ -38,6 +39,7 @@ const ProductsList = (props) => {
 
     return(
         <>
+            <Cover />
             <div className={styles.container}>
                 <Filter />
                 <ul className={styles.productsList}>
@@ -46,7 +48,7 @@ const ProductsList = (props) => {
                         (loading && !products.length && !error) && Array(productsPerPage).fill(0).map((_ , i)=> <ProductSkeleton key={i} />)
                     }
                     {
-                        (error && !products.length) && "An error occured."
+                        (error && !products.length) && <p className={styles.noData}>An error occured.</p>
                     }
                     {
                         // Filter by page (pagination)
@@ -54,6 +56,9 @@ const ProductsList = (props) => {
                                     .filter(
                                             (_, i) => (i < (currentPage * productsPerPage) && i >= (currentPage * productsPerPage - productsPerPage))
                                         )
+                    }
+                    {
+                        (!loading && !filteredProducts.length && !error) && <p className={styles.noData}>No matches found</p>
                     }
 
                 </ul>

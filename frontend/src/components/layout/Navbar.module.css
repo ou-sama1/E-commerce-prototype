@@ -49,5 +49,16 @@
 }
 
 .cart_profile{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
+.logout{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
 }

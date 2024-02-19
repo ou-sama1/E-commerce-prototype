@@ -1,0 +1,87 @@
+.container{
+    width: 500px;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+}
+
+.signup{
+    min-height : 700px;
+}
+.login{
+    min-height : 400px;
+}
+
+.title{
+    color: #444;
+    text-align: center;
+    margin: 20px 0;
+    flex: 0 1 auto;
+}
+
+.form{
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.form_group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.label{
+    
+}
+
+.input{
+    flex: 1 1 auto;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    outline: none;
+}
+
+.input[type = "radio"]{
+    height: 20px;
+}
+
+.form_radio{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+}
+
+.btn{
+    flex: 0 1 auto;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.error_message{
+    margin: 0;
+    color: red;
+}
+
+.invalid_input{
+    border-color: red;
+}

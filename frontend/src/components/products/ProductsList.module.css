@@ -16,3 +16,7 @@
     width: 100%;
     min-width: 700px;
 }
+
+.noData{
+    font-size: large;
+}
