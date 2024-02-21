@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cartSlice";
 import { useNavigate } from "react-router-dom";
+import Heart from "../UI/Heart";
 
 const Product = (props) => {
     const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const Product = (props) => {
 
     return(
         <li className={styles.product}>
+            <Heart product={props.product} />
             <div className={styles.imgContainer}>
                 <img src={image} alt={title} className={styles.image}  onClick={()=>goToDetail(id)}/>
             </div>

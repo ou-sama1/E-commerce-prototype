@@ -1,0 +1,30 @@
+.heart img{
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.highlight{
+    animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.9);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.20);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

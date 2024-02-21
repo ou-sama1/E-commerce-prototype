@@ -2,7 +2,6 @@ import './App.css'
 import {Routes, Route, Navigate} from "react-router-dom"
 import Navbar from "./components/layout/Navbar.jsx"
 import ProductsList from "./components/products/ProductsList.jsx"
-
 import Footer from './components/layout/Footer.jsx'
 import Signup from './components/authentication/signup.jsx'
 import Login from './components/authentication/Login.jsx'
@@ -24,7 +23,9 @@ function App() {
       dispatch(userAutenticated(user));
       const getFavorites = async () => {
         const usersFavorites = await getUserFavorites(user);
-        dispatch(fillFav(usersFavorites));
+        if(!error){
+          dispatch(fillFav(usersFavorites));
+        }
       }
       getFavorites();
     }

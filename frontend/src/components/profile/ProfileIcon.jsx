@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import profileIcon from '../../images/icon-profile.svg';
 import Modal from '../UI/Modal';
 import styles from './ProfileIcon.module.css';
-import useGetFavorites from '../../hooks/useGetFavorites';
-import { useDispatch } from 'react-redux';
-import { userActions } from '../../store/userSlice';
+import Heart from '../UI/Heart';
 
 const ProfileIcon = (props) => {
     const { username, email } = props.user || {username : "", email : ""};
@@ -31,10 +29,11 @@ const ProfileIcon = (props) => {
                         <h3  className={styles.header}>Favorites :</h3>
                         <ul className={styles.favorites}>
                             {
-                                favorites.length   ? favorites.map(fav => <li key={fav.id} className={styles.favItem}>
-                                                                    <img src={fav.image} className={styles.image} />
-                                                                    <h3 className={styles.title}>{fav.title}</h3>
-                                                                </li>)
+                                favorites.length   ? favorites.map(fav =>   <li key={fav.id} className={styles.favItem}>
+                                                                                <Heart product={fav} />
+                                                                                <img src={fav.image} className={styles.image} />
+                                                                                <h3 className={styles.title}>{fav.title}</h3>
+                                                                            </li>)
                                             : <p>No items were added.</p>
                             }
                         </ul></>
