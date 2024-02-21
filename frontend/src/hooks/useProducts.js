@@ -9,9 +9,6 @@ const useProducts = () => {
     const getProducts = useCallback( async () => {
         setLoading(true);
         try {
-            //Fake loading to test the loading state
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
             const fetchedProducts = await httpGetProducts();
             setProducts(fetchedProducts);
         } catch (error) {

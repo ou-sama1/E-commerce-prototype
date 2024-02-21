@@ -21,6 +21,16 @@ const cartSlice = createSlice({
             const item = state.cart.filter(item => item.id === action.payload);
             item[0].quantity++;
         },
+        incrementItemBy : (state, action) => {
+            const item = state.cart.filter(item => item.id === action.payload.product.id)[0];
+            if(item){
+                item.quantity += action.payload.quantity;
+            }
+            else{
+                state.cart.push({...action.payload.product, quantity : action.payload.quantity});
+            }
+            
+        },
         decrementItem : (state, action) => {
             const item = state.cart.filter(item => item.id === action.payload);
             if(item[0].quantity === 1){

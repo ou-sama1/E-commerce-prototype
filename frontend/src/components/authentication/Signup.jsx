@@ -77,12 +77,12 @@ function Signup() {
 
         if(success){
             navigate('/');
+            navigate(0);
         }
         else dispatch({type : 'RESET'})
     }
     else {
       dispatch({type : 'ERROR'})
-      alert("You need to fill the fields")
     }
   }
 
@@ -96,7 +96,7 @@ function Signup() {
         <div className={styles.form_group}>
           <label className={styles.label}>username</label>
           <input type="text" name="username" className={`${styles.input} ${!formState.username.isValid && formState.username.isTouched ? styles.invalid_input : ""}`} value={formState.username.value} onChange={fieldOnChange} onBlur={fieldOnBlur}/>
-          {!formState.username.isValid && formState.username.isTouched && <p className={styles.error_message}>invalid username input.</p>}
+          {!formState.username.isValid && formState.username.isTouched && <p className={styles.error_message}>username should contain at least 3 letters.</p>}
         </div>
 
         <div className={styles.form_group}>
@@ -108,7 +108,7 @@ function Signup() {
         <div className={styles.form_group}>
           <label className={styles.label}>Password</label>
           <input type="password" name="password" className={`${styles.input} ${!formState.password.isValid && formState.password.isTouched ? styles.invalid_input : ""}`} value={formState.password.value} onChange={fieldOnChange} onBlur={fieldOnBlur}/>
-          {!formState.password.isValid && formState.password.isTouched && <p className={styles.error_message}>invalid password input.</p>}
+          {!formState.password.isValid && formState.password.isTouched && <p className={styles.error_message}>password should include at least 1 lowercase, 1 uppercase, a number, and be a minimum of 8 characters in length.</p>}
         </div>
         
         <div className={styles.form_group}>

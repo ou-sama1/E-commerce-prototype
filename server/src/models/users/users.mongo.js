@@ -16,6 +16,11 @@ const usersSchema = new mongoose.Schema({
     password : {
         type : String,
         require : true,
+    },
+
+    favorites : {
+        type : [Number],
+        require : false,
     }
 
 });

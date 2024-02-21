@@ -1,0 +1,72 @@
+.container{
+    margin: 50px auto;
+    height: 400px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow: hidden;
+}
+
+.imgContainer{
+    height: 100%;
+    width: 40%;
+    overflow: hidden;
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.details{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.description{
+    font-size: 1.2rem;
+}
+
+.separator{
+    flex: 1 1 auto;
+}
+
+.price{
+    align-self: flex-end;
+    font-size: 2.5rem;
+    padding: 10px;
+}
+
+.btnContainer{
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.quantityBtn{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.addBtn{
+    height: 50px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+

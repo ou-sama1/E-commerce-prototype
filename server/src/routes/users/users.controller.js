@@ -1,8 +1,8 @@
-const { signup, login } = require('../../models/users/users.model');
+const { signup, login, addToFavorites, getFavorites } = require('../../models/users/users.model');
 const jwt = require('jsonwebtoken');
 
 function createToken(id){
-    return jwt.sign({ id }, process.env.TOKEN_SECRET, { expiresIn : "120s" });
+    return jwt.sign({ _id : id }, process.env.TOKEN_SECRET, { expiresIn : "3d" });
 }
 
 async function httpSignup(req, res){
@@ -32,7 +32,31 @@ async function httpLogin(req, res){
 
 }
 
+async function httpGetFavorites(req, res){
+    const { _id } = req.body;
+
+    try{
+        const favorites = await getFavorites(_id);
+        res.status(200).json(favorites);
+    } catch (error) {
+        res.status(400).json({error : error.message});
+    }
+}
+
+async function httpAddToFavorites(req, res){
+    const { _id, id } = req.body;
+
+    try {
+        await addToFavorites(_id, id);
+        res.status(201).json({success : true});
+    } catch (error) {
+        res.status(400).json({error : error.message});
+    }
+}
+
 module.exports = {
     httpSignup,
-    httpLogin
+    httpLogin,
+    httpAddToFavorites,
+    httpGetFavorites,
 }

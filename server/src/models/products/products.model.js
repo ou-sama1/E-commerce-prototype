@@ -4,6 +4,17 @@ async function getProducts(){
     return await productsDB.find({}, {
         '_id' : 0,
         '__v' : 0,
+    }).sort('id');
+}
+
+async function getProduct(id){
+    const validatedId = parseInt(id);
+    if(!(validatedId >= 0)){
+        throw new Error('invalid id');
+    }
+    return await productsDB.findOne({ id }, {
+        '_id' : 0,
+        '__v' : 0,
     });
 }
 
@@ -43,4 +54,5 @@ async function saveProduct(product){
 
 module.exports = {
     getProducts,
+    getProduct,
 }

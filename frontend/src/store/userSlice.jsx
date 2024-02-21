@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     user : null,
+    favorites : [],
 }
 
 const userSlice = createSlice({
@@ -13,6 +14,21 @@ const userSlice = createSlice({
         },
         userLoggedOut(state, action){
             state.user = null;
+            state.favorites = [];
+        },
+        addToFav(state, action){
+            const exists = state.favorites.filter(item => item.id === action.payload.id)[0];
+            if(exists){
+                state.favorites = state.favorites.filter(item => item.id !== exists.id)
+            }
+            else{
+                state.favorites.push(action.payload);
+            }
+        },
+        fillFav(state, action){
+            if(action.payload){
+                state.favorites = action.payload;
+            }
         }
     }
 })

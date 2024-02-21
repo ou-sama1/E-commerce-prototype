@@ -3,12 +3,14 @@ import cartIcon from "../../images/icon-cart.svg";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const Product = (props) => {
     const dispatch = useDispatch();
     const [added, setAdded] = useState(false);
     const {id, title, image, description, price} = props.product;
     const {addToCart} = cartActions;
+    const navigate = useNavigate();
 
     const addHandler = () => {
         dispatch(addToCart({id, title, image, price}));
@@ -17,11 +19,15 @@ const Product = (props) => {
         return () => clearTimeout(timer);
     }
 
+    const goToDetail = (id) => {
+        navigate(`/products/${id}`);
+    }
+
     return(
         <li className={styles.product}>
-
-            <img src={image} alt={title} className={styles.image} />
-
+            <div className={styles.imgContainer}>
+                <img src={image} alt={title} className={styles.image}  onClick={()=>goToDetail(id)}/>
+            </div>
             <div className={styles.details}>
 
                 <h2 className={styles.title}>{title}</h2>

@@ -22,7 +22,6 @@ const useAuthenticate = () => {
             localStorage.setItem('user', JSON.stringify(response.data));
             dispatch(userAutenticated(response.data));
             setLoading(false);
-
         }
         else{
             setLoading(false);

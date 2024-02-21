@@ -29,7 +29,7 @@ const CartItem = (props) => {
                 <span> {quantity} </span>
                 <button onClick={decrementHandler} className={styles.btn}>-</button>
             </div>
-            <button onClick={deleteHandler} className={styles.btnDel}><img src="./src/images/icon-delete.svg" /></button>
+            <button onClick={deleteHandler} className={styles.btnDel}><img src="/src/images/icon-delete.svg" /></button>
         </li>
     )
 }
