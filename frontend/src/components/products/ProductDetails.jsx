@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
 import ProductDetailsSkeleton from './skeleton/ProductDetailsSkeleton';
 import Heart from '../UI/Heart';
+import ErrorPage from '../layout/ErrorPage';
 
 const ProductDetails = () => {
     const { getProduct, loading, error } = useProduct();
@@ -62,7 +63,7 @@ const ProductDetails = () => {
     return(
         <>
             {loading && <ProductDetailsSkeleton />}
-            {error && <p>An error occured</p>} 
+            {error && <ErrorPage error="An error occured." />} 
             {!loading && !error && template}
         </>
     )
