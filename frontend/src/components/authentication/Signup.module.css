@@ -85,3 +85,11 @@
 .invalid_input{
     border-color: red;
 }
+
+.noAccount, .hasAccount{
+    text-align: center;
+}
+.noAccount a,  .hasAccount a{
+    text-decoration: underline;
+    color: black;
+}

@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import styles from "./Signup.module.css";
 import useAuthenticate from "../../hooks/useAutenticate";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const initialFormState =  {
     email : {value : '', isValid : false, isTouched : false},
@@ -97,6 +97,8 @@ function Login() {
         <button className={styles.btn} onClick={submitHandler} disabled={loading} >{loading ? "Submitting..." : "Submit"}</button>
         {error && <p className={styles.error_message} align='center'>{error}</p>}
         
+        <p className={styles.noAccount}>You dont have an account yet ? <Link to="/signup">Signup !</Link></p>
+
       </form>
     </div>
   )

@@ -46,7 +46,7 @@ const Heart = (props) => {
             setHearted(prev => !prev);
             }
         }
-        if(!user) navigate('/signup');
+        if(!user) navigate('/login');
     }
 
     return(
