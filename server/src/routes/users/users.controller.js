@@ -6,7 +6,7 @@ function createToken(id){
 }
 
 async function httpSignup(req, res){
-    const { username, email, password } = req.body;
+    const { username, email, password } = req.body.user;
 
     try {
         const user = await signup(username, email, password);

@@ -11,6 +11,7 @@
 - ExpressJS <br>
 - MongoDB <br>
 - JWT <br>
+- ReCAPTCHA <br>
 
 created using Vite for its fast development server ⚡
 
@@ -20,6 +21,8 @@ created using Vite for its fast development server ⚡
 - Skeleton loading state <br>
 - Client side pagination <br>
 - Authentication <br>
+- Fallback ErrorPage <br>
+- Captcha verification in the signup page <br>
 
 ## Todo :
 - Filling the other routes <br>
