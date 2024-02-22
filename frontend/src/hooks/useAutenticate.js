@@ -9,12 +9,12 @@ const useAuthenticate = () => {
     const { userAutenticated } = userActions;
     const dispatch = useDispatch();
 
-    const authenticate = async (user, mode) => {
+    const authenticate = async (user, mode, captchaValue) => {
         setLoading(true);
         setError('');
         let response;
         if(mode === 'signup'){
-            response = await httpAuthenticate(user, 'signup');
+            response = await httpAuthenticate(user, 'signup', captchaValue);
         }
         else response = await httpAuthenticate(user, 'login');
 

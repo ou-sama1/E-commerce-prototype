@@ -1,7 +1,8 @@
-import { useReducer } from "react";
+import { useReducer, useRef, useState } from "react";
 import styles from "./Signup.module.css";
 import useAuthenticate from "../../hooks/useAutenticate";
 import { Link, useNavigate } from "react-router-dom";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const initialFormState =  {
     username : {value : '', isValid : false, isTouched : false},
@@ -56,7 +57,9 @@ const formReducer = (state, action) => {
 function Signup() {
   const [formState, dispatch] = useReducer(formReducer, initialFormState);
   const { authenticate, loading, error } = useAuthenticate();
+  const [invalidCaptcha, setInvalidCaptcha] = useState(false);
   const navigate = useNavigate();
+  const recaptcha = useRef();
 
   const fieldOnChange = (e) => {
     dispatch({type : 'CHANGE', field : e.target.name, value : e.target.value})
@@ -67,13 +70,17 @@ function Signup() {
   const submitHandler = async (e) => {
     e.preventDefault()
 
+    const captchaValue = recaptcha.current.getValue();
+    if(!captchaValue) return setInvalidCaptcha(true);
+    setInvalidCaptcha(false);
+
     if(formState.username.isValid && formState.email.isValid && formState.password.isValid && formState.cpassword.isValid){
         const user = {
             username : formState.username.value,
             email : formState.email.value,
             password : formState.password.value,
         }
-        const success = await authenticate(user, 'signup');
+        const success = await authenticate(user, 'signup', captchaValue);
 
         if(success){
             navigate('/');
@@ -129,7 +136,10 @@ function Signup() {
 
         <button className={styles.btn} onClick={submitHandler} disabled={loading} >{loading ? "Submitting..." : "Submit"}</button>
         {error && <p className={styles.error_message} align='center'>{error}</p>}
-        
+        <div className={styles.recaptcha}>
+          <ReCAPTCHA ref={recaptcha} sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} />
+        </div>
+        {invalidCaptcha && <p className={styles.error_message}>Invalid captcha.</p>}
         <p className={styles.hasAccount}>Already have an account ? <Link to='/login'>login !</Link></p>
       </form>
     </div>

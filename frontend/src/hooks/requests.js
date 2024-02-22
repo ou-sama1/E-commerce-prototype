@@ -12,15 +12,27 @@ async function httpGetProduct(id){
     return data;
 };
 
-async function httpAuthenticate(user, mode){
+async function httpAuthenticate(user, mode, captchaValue){
     try {
-        const response = await fetch(`${baseUrl}/${mode}`, {
-            method : 'POST',
-            headers : {
-                'Content-Type' : 'application/json'
-            },
-            body : JSON.stringify(user),
-        })
+        let response;
+        if(mode === "signup"){
+            response = await fetch(`${baseUrl}/${mode}`, {
+                method : 'POST',
+                headers : {
+                    'Content-Type' : 'application/json'
+                },
+                body : JSON.stringify({user, captchaValue}),
+            })
+        }
+        else{
+            response = await fetch(`${baseUrl}/${mode}`, {
+                method : 'POST',
+                headers : {
+                    'Content-Type' : 'application/json'
+                },
+                body : JSON.stringify(user),
+            })
+        }
 
         if(!response.ok){
             throw response;
@@ -36,6 +48,7 @@ async function httpAuthenticate(user, mode){
             return { ok: false, error: errorData.error };
         } else {
             // If the error is not a Response object, it might be a network error or something else
+            console.log(error)
             return { ok: false, error : "something went wrong, please check your connection."};
         }
     }
