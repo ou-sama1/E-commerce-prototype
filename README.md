@@ -21,8 +21,9 @@ created using Vite for its fast development server ⚡
 - Skeleton loading state <br>
 - Client side pagination <br>
 - Authentication <br>
-- Fallback ErrorPage <br>
-- Captcha verification in the signup page <br>
+- Profile as a side modal <br>
+- Add to favorites (gets saved for each account) <br>
+- Captcha verification <br>
 
 ## Todo :
 - Filling the other routes <br>
