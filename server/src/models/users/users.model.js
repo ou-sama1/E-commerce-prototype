@@ -69,15 +69,20 @@ async function getFavorites(_id){
     return favorites;
 }
 
+//This function is not only for adding to favorites, it also removes if the item was already added
 async function addToFavorites(_id, id){
     const validatedId = parseInt(id);
+
+    //Checking if the id is valid
     if(!(validatedId >= 0)){
         throw Error('invalid id');
     }
+    //Checking if that product exists 
     const existsInProducts = await ProductsDB.findOne({id : validatedId});
     if(!existsInProducts){
         throw Error('Item not found');
     }
+    //Checking if the product is already added to favorites, if so, then remove it
     const existsInFavorites = await UsersDB.findOne({_id, favorites : validatedId});
     if(existsInFavorites){
         await UsersDB.updateOne({_id}, {

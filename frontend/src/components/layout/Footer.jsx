@@ -9,11 +9,8 @@ const Footer = () => {
             <div className={styles.mailing}>
                 <h3>Don't Miss Out</h3>
                 <p>Sign up for the latest athletic fashion news, products discounts and coupons</p>
-                <form>
-                    <div className={styles.inputs}>
-                        <input type="email" placeholder="Enter Your Email Address" />
-                        <input type="date" />
-                    </div>
+                <form className={styles.form}>
+                    <input className={styles.email} type="email" placeholder="Enter Your Email Address" />
                     <button className={styles.btn}>Sign up</button>
                 </form>
                 <p>By signing up, you understand and agree to that <a>Privacy Policy</a> and <a>Terms of Use</a></p>

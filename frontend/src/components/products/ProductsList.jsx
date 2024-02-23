@@ -38,9 +38,9 @@ const ProductsList = (props) => {
                             .map(product => <Product key={product.id} product={product} />)
 
     return(
-        <>
+        <div className={styles.container}>
             <Cover />
-            <div className={styles.container}>
+            <div className={styles.subContainer}>
                 <Filter />
                 <ul className={styles.productsList}>
 
@@ -67,7 +67,7 @@ const ProductsList = (props) => {
             {
                 products && <Pagination itemsCount={filteredProducts.length} itemsPerPage={productsPerPage} MoveToNextPage={MoveToNextPage} currentPage={currentPage} />
             }
-        </>
+        </div>
     )
 }
 

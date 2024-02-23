@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className='appContainer'>
       <Navbar/>
       <Routes>
         <Route path='/' element={<ProductsList />} />
@@ -43,7 +43,7 @@ function App() {
         <Route path="*" element={<ErrorPage error='Page not found.' />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 

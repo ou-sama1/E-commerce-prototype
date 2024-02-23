@@ -31,10 +31,13 @@
     gap: 5px;   
 }
 
-.price{
-    
-}
-
-.type{
-
-}
+@media only screen and (min-width: 750px) and  (max-width: 1100px) {
+    .filter{
+        height: auto;
+        min-width: none;
+    }
+    .layers{
+        flex-direction: row;
+        height: auto;
+    }
+  }

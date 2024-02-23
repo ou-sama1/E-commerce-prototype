@@ -10,15 +10,38 @@
     min-height: 100px;
 }
 
+.subContainer{
+    height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+}
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0 5px;
+}
+
+
 .image{
     object-fit: cover;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: 100%;
 }
 
 .title{
-    width: 120px;
     text-align: center;
+    margin: 0;
 }
 
 .price{
@@ -54,3 +77,20 @@
     padding: 5px;
 }
 
+@media only screen and (max-width : 550px) {
+    .item{
+        height: 150px;
+    }
+    .subContainer{
+        
+    }
+    .image{
+        width: auto;
+    }
+    .actions{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+    }
+}

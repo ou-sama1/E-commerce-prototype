@@ -138,8 +138,8 @@ function Signup() {
         {error && <p className={styles.error_message} align='center'>{error}</p>}
         <div className={styles.recaptcha}>
           <ReCAPTCHA ref={recaptcha} sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} />
+          {invalidCaptcha && <p className={styles.error_message}>Please verify the reCAPTCHA.</p>}
         </div>
-        {invalidCaptcha && <p className={styles.error_message}>Invalid captcha.</p>}
         <p className={styles.hasAccount}>Already have an account ? <Link to='/login'>login !</Link></p>
       </form>
     </div>

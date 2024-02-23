@@ -20,8 +20,8 @@
 }
 
 .imgContainer{
+    min-width: 300px;
     height: 100%;
-    width: auto;
     overflow: hidden;
 }
 
@@ -64,6 +64,7 @@
 
 .btnContainer{
     align-self: flex-end;
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -89,24 +90,13 @@
     cursor: pointer;
 }
 
-.highlight{
-    animation: bump 300ms ease-out;
-}
-
-@keyframes bump {
-    0% {
-        transform: scale(1);
+@media only screen and (max-width : 850px) {
+    .container{
+        flex-direction: column;
+        height: auto;
+        width: 100%;
     }
-    10% {
-        transform: scale(0.9);
-    }
-    30% {
-        transform: scale(1.1);
-    }
-    50% {
-        transform: scale(1.20);
-    }
-    100% {
-        transform: scale(1);
+    .details{
+        width: auto;
     }
 }
