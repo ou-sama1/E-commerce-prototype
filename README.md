@@ -28,4 +28,3 @@ created using Vite for its fast development server ⚡
 ## Todo :
 - Filling the other routes <br>
 - Adding a carousel <br>
-- Making the website responsive <br>
