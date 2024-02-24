@@ -33,7 +33,7 @@ const Pagination = (props) => {
         <ul className={styles.container}>
             {
                 pages.map( i => 
-                                <li className={
+                                <a href='#productsList' className={
                                         `${styles.num} 
                                         ${currentPage === i ? styles.active : ''}`
                                         } 
@@ -44,7 +44,7 @@ const Pagination = (props) => {
                                     {i === pages[0] && i > 1 && '<<'}
                                     {i === pages[pages.length - 1] && i < numberOfPages && '>>'}
                                     {!(i === pages[0] && i > 1) && !(i === pages[pages.length - 1] && i < numberOfPages) && i}
-                                </li>
+                                </a>
                                 )
             }
         </ul>

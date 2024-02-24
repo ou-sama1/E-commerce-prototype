@@ -40,7 +40,7 @@ const ProductsList = (props) => {
     return(
         <div className={styles.container}>
             <Cover />
-            <div className={styles.subContainer}>
+            <div id="productsList" className={styles.subContainer}>
                 <Filter />
                 <ul className={styles.productsList}>
 

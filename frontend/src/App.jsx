@@ -11,6 +11,7 @@ import { userActions } from './store/userSlice.jsx'
 import ProductDetails from './components/products/ProductDetails.jsx'
 import useGetFavorites from './hooks/useGetFavorites.js'
 import ErrorPage from './components/layout/ErrorPage.jsx'
+import ScrollToTop from './components/UI/ScrollToTop.jsx'
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className='appContainer'>
+      <ScrollToTop/>
       <Navbar/>
       <Routes>
         <Route path='/' element={<ProductsList />} />
