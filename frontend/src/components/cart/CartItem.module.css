@@ -8,6 +8,7 @@
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     height: 100px;
     min-height: 100px;
+    
 }
 
 .subContainer{
@@ -15,7 +16,7 @@
     flex: 1 1 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .details{
@@ -27,9 +28,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    height: 100%;
     margin: 0 5px;
+    justify-content: space-around;
+    width: auto;
+    height: auto;
 }
 
 
@@ -42,6 +44,7 @@
 .title{
     text-align: center;
     margin: 0;
+    width: 100px;
 }
 
 .price{
@@ -79,18 +82,12 @@
 
 @media only screen and (max-width : 550px) {
     .item{
-        height: 150px;
-    }
-    .subContainer{
         
     }
-    .image{
-        width: auto;
+    .subContainer{
+        flex-direction: column;
     }
     .actions{
         flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        height: auto;
     }
 }
