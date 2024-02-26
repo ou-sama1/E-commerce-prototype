@@ -12,6 +12,7 @@ import ProductDetails from './components/products/ProductDetails.jsx'
 import useGetFavorites from './hooks/useGetFavorites.js'
 import ErrorPage from './components/layout/ErrorPage.jsx'
 import ScrollToTop from './components/UI/ScrollToTop.jsx'
+import Contact from './components/contact/Contact.jsx'
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function App() {
         <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/signup' element={user ? <Navigate to='/' /> : <Signup />} />
         <Route path='/login' element={user ? <Navigate to='/' /> : <Login />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path="*" element={<ErrorPage error='Page not found.' />} />
       </Routes>
       <Footer />

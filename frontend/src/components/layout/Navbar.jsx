@@ -32,6 +32,9 @@ const Navbar = ()=>{
                 {user.user && <Logout />}
             </div>
             <button className={styles.btnShow} onClick={toggleVisibility}>{visible ? <img src={iconClose} /> : <img src={iconMenu} />}</button>
+            <span className={`${styles.cart} ${visible ? styles.hideCart : ''}`}>
+                <Cart/>
+            </span>    
         </nav>
     )
 }

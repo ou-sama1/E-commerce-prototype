@@ -65,6 +65,10 @@
     font-size: 2rem;
 }
 
+.cart{
+    display: none;
+}
+
 @media only screen and (max-width : 750px) {
     .navbar, .links, .cart_profile{
         flex-direction: column; 
@@ -99,5 +103,14 @@
     }
     .link:hover, .active{
         background-color: #eee;
+    }
+    .cart{
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 10px;
+    }
+    .hideCart{
+        display: none;
     }
 }
