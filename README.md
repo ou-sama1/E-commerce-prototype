@@ -23,7 +23,7 @@ created using Vite for its fast development server ⚡
 - Client side pagination <br>
 - Authentication <br>
 - Profile as a side modal <br>
-- Add to favorites (gets saved for each account) <br>
+- Add to favorites (you need an account to add items to your favorites) <br>
 - Captcha verification <br>
 - Send an email <br>
 
