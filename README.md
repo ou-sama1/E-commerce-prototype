@@ -12,6 +12,7 @@
 - MongoDB <br>
 - JWT <br>
 - ReCAPTCHA <br>
+- EmailJS <br>
 
 created using Vite for its fast development server ⚡
 
@@ -24,6 +25,7 @@ created using Vite for its fast development server ⚡
 - Profile as a side modal <br>
 - Add to favorites (gets saved for each account) <br>
 - Captcha verification <br>
+- Send an email <br>
 
 ## Todo :
 - Filling the other routes <br>
