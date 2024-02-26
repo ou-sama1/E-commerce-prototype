@@ -8,7 +8,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 const initialFormState =  {
     email : {value : '', isValid : false, isTouched : false},
-    name : {value : '', isValid : false, isTouched : false},
+    user_name : {value : '', isValid : false, isTouched : false},
     message : {value : '', isValid : false, isTouched : false},
 }
 
@@ -17,7 +17,7 @@ const validateInput = (action) => {
     case 'email':
         return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(action.value)
 
-    case 'name':
+    case 'user_name':
         return /^[a-zA-Z]{3,}$/.test(action.value)
     
     case 'message':
@@ -39,12 +39,9 @@ const formReducer = (state, action) => {
     case 'ERROR':
       return {
         email : {value : state.email.value, isValid : state.email.isValid, isTouched : true},
-        name : {value : state.name.value, isValid : state.name.isValid, isTouched : true},
+        user_name : {value : state.user_name.value, isValid : state.user_name.isValid, isTouched : true},
         message : {value : state.message.value, isValid : state.message.isValid, isTouched : true},
       };
-    
-    case 'RESET':   
-      return {...initialFormState}
   
     default:
       break;
@@ -54,6 +51,7 @@ const formReducer = (state, action) => {
 const Contact = () => {
     const[loading, setLoading] = useState(false);
     const[error, setError] = useState(false);
+    const[success, setSuccess] = useState(false);
     const [invalidCaptcha, setInvalidCaptcha] = useState(false);
     const form = useRef();
     const recaptcha = useRef();
@@ -68,7 +66,7 @@ const Contact = () => {
     const submitHandler = async (e) => {
       e.preventDefault()
       
-      if(formState.email.isValid && formState.name.isValid && formState.message.isValid){
+      if(formState.email.isValid && formState.user_name.isValid && formState.message.isValid){
         const captchaValue = recaptcha.current.getValue();
         if(!captchaValue) return setInvalidCaptcha(true);
         setInvalidCaptcha(false);
@@ -82,7 +80,7 @@ const Contact = () => {
           if(!response === "OK"){
             throw new Error()
           }
-          dispatch({type : 'RESET'})
+          setSuccess(true);
 
         } catch (error) { 
           setError(true);
@@ -95,6 +93,31 @@ const Contact = () => {
         dispatch({type : 'ERROR'})
       }
     }
+
+    const formTemplate = <form  className={styles.form} ref={form}>
+                            <div className={styles.form_group}>
+                                <input type="text" name="user_name" className={`${styles.input} ${!formState.user_name.isValid && formState.user_name.isTouched ? styles.invalid_input : ""}`} value={formState.user_name.value} onChange={fieldOnChange} onBlur={fieldOnBlur} placeholder='Enter your name'/>
+                                {!formState.user_name.isValid && formState.user_name.isTouched && <p className={styles.error_message}>name should contain at least 3 letters.</p>}
+                            </div>
+
+                            <div className={styles.form_group}>
+                                <input type="email" name="email" className={`${styles.input} ${!formState.email.isValid && formState.email.isTouched ? styles.invalid_input : ""}`} value={formState.email.value} onChange={fieldOnChange} onBlur={fieldOnBlur} placeholder='Enter your email'/>
+                                {!formState.email.isValid && formState.email.isTouched && <p className={styles.error_message}>invalid email input.</p>}
+                            </div>
+
+                            <div className={styles.form_group}>
+                                <textarea name="message" cols="30" rows="20" placeholder="Enter your message" className={`${styles.input} ${!formState.message.isValid && formState.message.isTouched ? styles.invalid_input : ""}`} value={formState.message.value} onChange={fieldOnChange} onBlur={fieldOnBlur} >
+                                </textarea>
+                                {!formState.message.isValid && formState.message.isTouched && <p className={styles.error_message}>please enter a message.</p>}
+                            </div>
+
+                            <button className={styles.btn} onClick={submitHandler} disabled={loading} >{loading ? "Sending..." : "Send"}</button>
+                            {error && <p className={styles.error_message} align='center'>{error}</p>}
+                            <div className={styles.recaptcha}>
+                              <ReCAPTCHA ref={recaptcha} sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} />
+                              {invalidCaptcha && <p className={styles.error_message}>Please verify the reCAPTCHA.</p>}
+                            </div>
+                        </form>
 
     return(
         <div className={styles.container}>
@@ -118,30 +141,9 @@ const Contact = () => {
             <div className={styles.messageForm}>
                 <h2>We'd Love to Hear From You</h2>
                 <p className={styles.superPara}>You can email the dev directly from the form below !</p>
-                <form  className={styles.form} ref={form}>
-                    <div className={styles.form_group}>
-                        <input type="text" name="name" className={`${styles.input} ${!formState.name.isValid && formState.name.isTouched ? styles.invalid_input : ""}`} value={formState.name.value} onChange={fieldOnChange} onBlur={fieldOnBlur} placeholder='Enter your name'/>
-                        {!formState.name.isValid && formState.name.isTouched && <p className={styles.error_message}>name should contain at least 3 letters.</p>}
-                    </div>
-
-                    <div className={styles.form_group}>
-                        <input type="email" name="email" className={`${styles.input} ${!formState.email.isValid && formState.email.isTouched ? styles.invalid_input : ""}`} value={formState.email.value} onChange={fieldOnChange} onBlur={fieldOnBlur} placeholder='Enter your email'/>
-                        {!formState.email.isValid && formState.email.isTouched && <p className={styles.error_message}>invalid email input.</p>}
-                    </div>
-
-                    <div className={styles.form_group}>
-                        <textarea name="message" cols="30" rows="20" placeholder="Enter your message" className={`${styles.input} ${!formState.message.isValid && formState.message.isTouched ? styles.invalid_input : ""}`} value={formState.message.value} onChange={fieldOnChange} onBlur={fieldOnBlur} >
-                        </textarea>
-                        {!formState.message.isValid && formState.message.isTouched && <p className={styles.error_message}>please enter a message.</p>}
-                    </div>
-
-                    <button className={styles.btn} onClick={submitHandler} disabled={loading} >{loading ? "Sending..." : "Send"}</button>
-                    {error && <p className={styles.error_message} align='center'>{error}</p>}
-                    <div className={styles.recaptcha}>
-                      <ReCAPTCHA ref={recaptcha} sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} />
-                      {invalidCaptcha && <p className={styles.error_message}>Please verify the reCAPTCHA.</p>}
-                    </div>
-                </form>
+                {
+                  !success ? formTemplate : <p className={styles.successMessage}>Thank you for your feedback !</p>
+                }
             </div>
         </div>
     )
