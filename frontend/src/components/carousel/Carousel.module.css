@@ -1,0 +1,46 @@
+.container{
+    width: 1310px;
+    height: 500px;
+    margin: 30px auto;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.container img{
+    height:100%;
+    width: 1310px;
+    object-fit:cover;
+    position: relative;
+}
+
+.animation{
+    animation: moveElement 1s ease-out forwards;
+}
+
+@keyframes moveElement {
+    from {
+       right: -1310px;
+    }
+    to {
+       right: 0;
+    }
+   }
+   
+@media only screen and (max-width : 1320px) {
+    .container{
+        width: 100vw;
+        height: auto;
+    }
+    .container img{
+        width: 100vw;
+    }
+    @keyframes moveElement {
+        from {
+           right: -100vw;
+        }
+        to {
+           right: 0;
+        }
+    }
+}

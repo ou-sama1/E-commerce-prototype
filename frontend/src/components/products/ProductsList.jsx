@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import ProductSkeleton from "./skeleton/ProductSkeleton.jsx";
 import Pagination from "../UI/Pagination.jsx";
+import Carousel from "../carousel/Carousel.jsx";
 
 const ProductsList = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -25,8 +26,7 @@ const ProductsList = (props) => {
     }, [category, gender, price])
 
     //Filter by category, gender, price
-    const filteredProducts = products
-                            .filter(
+    const filteredProducts = products && products.filter(
                                 (product) => (
                                     (product.category === (category || product.category))
                                     &&
@@ -67,6 +67,7 @@ const ProductsList = (props) => {
             {
                 products && <Pagination itemsCount={filteredProducts.length} itemsPerPage={productsPerPage} MoveToNextPage={MoveToNextPage} currentPage={currentPage} />
             }
+            <Carousel />
         </div>
     )
 }

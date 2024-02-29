@@ -83,8 +83,8 @@ function Signup() {
         const success = await authenticate(user, 'signup', captchaValue);
 
         if(success){
-            navigate('/');
-            navigate(0);
+          navigate(0);
+          navigate('/');
         }
         else dispatch({type : 'RESET'})
     }

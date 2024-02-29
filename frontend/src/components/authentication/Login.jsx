@@ -65,8 +65,8 @@ function Login() {
         const success = await authenticate(user, 'login');
 
         if(success){
-            navigate('/');
-            navigate(0);
+          navigate(0);
+          navigate('/');
         }
         
     }

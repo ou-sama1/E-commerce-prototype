@@ -6,10 +6,13 @@ const ModalOverlay = (props)=>{
     const  {close, display} = props.control;
 
     return(
-        <div className={`${styles.modal} ${display ? styles.show : ""}`}>
-            <img src={closeIcon} className={styles.close} onClick={close} />
-            <div className={styles.content}>{props.children}</div>
-        </div>
+        <>
+            <div className={`${styles.layout} ${display ? styles.showLayout : ""}`}></div>
+            <div className={`${styles.modal} ${display ? styles.show : ""}`}>
+                <img src={closeIcon} className={styles.close} onClick={close} />
+                <div className={styles.content}>{props.children}</div>
+            </div>
+        </>
     )
 }
 
