@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import ProductSkeleton from "./skeleton/ProductSkeleton.jsx";
 import Pagination from "../UI/Pagination.jsx";
-import Carousel from "../carousel/Carousel.jsx";
+import Carousel from "../posters/Carousel.jsx";
 
 const ProductsList = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -40,6 +40,7 @@ const ProductsList = (props) => {
     return(
         <div className={styles.container}>
             <Cover />
+            <h2 className={styles.text}>Our products</h2>
             <div id="productsList" className={styles.subContainer}>
                 <Filter />
                 <ul className={styles.productsList}>

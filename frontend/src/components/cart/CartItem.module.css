@@ -37,7 +37,7 @@
 
 .image{
     object-fit: cover;
-    width: auto;
+    width: 100px;
     height: 100%;
 }
 

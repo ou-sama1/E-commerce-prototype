@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 70%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    gap: 30px;
+}
+
+.container h2{
+    font-size: 2.5rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 500px;
+    justify-content: space-around;
+}
+
+.content a{
+    color: rgb(1, 15, 143);
+}
+
+.section h3{
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+
+.section p{
+    font-size: 1.2rem;
+}
+
+.attributes{
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
