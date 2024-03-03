@@ -1,4 +1,5 @@
-const baseUrl = "http://localhost:8000";
+//Omitted when running in production mode
+const baseUrl = '';
 
 async function httpGetProducts(){
     const response = await fetch(`${baseUrl}/products`);
