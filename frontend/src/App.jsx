@@ -14,24 +14,32 @@ import ErrorPage from './components/layout/ErrorPage.jsx'
 import ScrollToTop from './components/UI/ScrollToTop.jsx'
 import Contact from './components/contact/Contact.jsx'
 import About from './components/about/About.jsx'
+import { cartActions } from './store/cartSlice.jsx'
 
 function App() {
   const dispatch = useDispatch();
   const { userAutenticated, fillFav } = userActions;
+  const { fillCart } = cartActions;
   const user = useSelector(state => state.user.user);
+  const cart = useSelector(state => state.cart.cart);
   const { getUserFavorites, error, loading } = useGetFavorites();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if(user){
-      dispatch(userAutenticated(user));
+    const userData = JSON.parse(localStorage.getItem('user'));
+    const cartData = JSON.parse(localStorage.getItem('cart'));
+    if(userData){
+      dispatch(userAutenticated(userData));
       const getFavorites = async () => {
-        const usersFavorites = await getUserFavorites(user);
+        const usersFavorites = await getUserFavorites(userData);
         if(!error){
           dispatch(fillFav(usersFavorites));
         }
       }
       getFavorites();
+    }
+
+    if(cartData){
+      dispatch(fillCart(cartData));
     }
   }, []);
 

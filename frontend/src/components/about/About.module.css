@@ -1,16 +1,13 @@
 .container{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 90vh;
     width: 70%;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
+    justify-content: center;
     gap: 30px;
-}
-
-.container h2{
-    font-size: 2.5rem;
 }
 
 .content{
@@ -26,8 +23,8 @@
 }
 
 .section h3{
+    margin-top: 0;
     font-size: 1.7rem;
-    text-decoration: underline;
 }
 
 .section p{

@@ -1,8 +1,8 @@
 const { signup, login, addToFavorites, getFavorites } = require('../../models/users/users.model');
 const jwt = require('jsonwebtoken');
 
-function createToken(id){
-    return jwt.sign({ _id : id }, process.env.TOKEN_SECRET, { expiresIn : "3d" });
+function createToken(_id){
+    return jwt.sign({ _id }, process.env.TOKEN_SECRET, { expiresIn : "3d" });
 }
 
 async function httpSignup(req, res){

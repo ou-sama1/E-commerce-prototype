@@ -15,9 +15,10 @@ const Cart = ()=>{
     }
 
     useEffect(() => {
-        if(cartItems.length === 0) return;
+        if(cartItems === null) return;
         setHighlight(true);
         const timer = setTimeout(()=>setHighlight(false), 300);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
         return () => {clearTimeout(timer)};
     }, [cartItems])
 
@@ -26,14 +27,14 @@ const Cart = ()=>{
             <button onClick={toggleCart} className={`${styles.btn} ${highlight ? styles.highlight : ""}`}>
                 <img src={cartIcon} className={styles.icon} />
                 {
-                    cartItems.length > 0 && <span className={styles.itemsCount}>{cartItems.length}</span>
+                    cartItems?.length > 0 && <span className={styles.itemsCount}>{cartItems.length}</span>
                 }
             </button>
             <Modal close={toggleCart} display={display}>
                 <h3 className={styles.header}>Cart</h3>
 
                   {
-                    cartItems.length ? 
+                    cartItems?.length ? 
                     <div className={styles.content}>
                         <ul className={styles.itemsList}>
                             {
