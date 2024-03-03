@@ -27,6 +27,3 @@ created using Vite for its fast development server ⚡
 - Captcha verification <br>
 - Send an email <br>
 
-## Todo :
-- Filling the other routes <br>
-- Adding a carousel <br>
