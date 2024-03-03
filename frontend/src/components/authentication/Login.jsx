@@ -66,7 +66,6 @@ function Login() {
 
         if(success){
           navigate(0);
-          navigate('/');
         }
         
     }

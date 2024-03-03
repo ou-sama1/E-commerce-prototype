@@ -14,13 +14,13 @@ const initialFormState =  {
 const validateInput = (action, state) => {
   switch (action.field) {
     case 'username':
-        return /^[a-zA-Z]{3,}[0-9]*$/.test(action.value)
+        return /^[a-zA-Z]{3,}[0-9]*$/.test(action.value) && action.value.length < 15;
 
     case 'email':
-        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(action.value)
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(action.value) && action.value.length < 50;
 
     case 'password':
-        return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(action.value)
+        return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(action.value) && action.value.length < 50;
 
     case 'cpassword':
         return action.value === state.password.value
@@ -82,11 +82,10 @@ function Signup() {
         }
         const success = await authenticate(user, 'signup', captchaValue);
 
-        if(success){
-          navigate(0);
-          navigate('/');
+        if(!success){
+          dispatch({type : 'RESET'})
         }
-        else dispatch({type : 'RESET'})
+
     }
     else {
       dispatch({type : 'ERROR'})
@@ -103,7 +102,7 @@ function Signup() {
         <div className={styles.form_group}>
           <label className={styles.label}>username</label>
           <input type="text" name="username" className={`${styles.input} ${!formState.username.isValid && formState.username.isTouched ? styles.invalid_input : ""}`} value={formState.username.value} onChange={fieldOnChange} onBlur={fieldOnBlur}/>
-          {!formState.username.isValid && formState.username.isTouched && <p className={styles.error_message}>username should contain at least 3 letters.</p>}
+          {!formState.username.isValid && formState.username.isTouched && <p className={styles.error_message}>username should contain at least 3 letters and be less than 15 characters.</p>}
         </div>
 
         <div className={styles.form_group}>

@@ -10,7 +10,6 @@ const useLogout = () => {
     const logout = () => {
         localStorage.removeItem('user');
         dispatch(userLoggedOut());
-        navigate(0);
         navigate('/');
     }
 

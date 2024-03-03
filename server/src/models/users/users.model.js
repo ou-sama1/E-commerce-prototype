@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 function validate(username, email, password){
     //Validating using regex
-    return /^[a-zA-Z]{2,}[0-9]*$/.test(username) && /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
+    return username.length < 15 && email.length < 50 && password.length < 50 && /^[a-zA-Z]{2,}[0-9]*$/.test(username) && /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
 }
 
 async function signup(username, email, password){
