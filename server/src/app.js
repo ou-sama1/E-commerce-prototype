@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require('path');
+// const path = require('path');
 const cors = require("cors");
 const helmet = require('helmet');
 const productsRouter = require("./routes/products/products.router");
@@ -21,7 +21,7 @@ app.use(helmet({
         );
 
 app.use(cors({
-    origin : "http://localhost:5173",
+    origin : "https://sneakers-y4qk.onrender.com/",
 }));
 
 app.use(express.json());
