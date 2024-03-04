@@ -1,5 +1,5 @@
-//Omitted when running in production mode
-const baseUrl = '';
+
+const baseUrl = 'https://sneakers-api.onrender.com';
 
 async function httpGetProducts(){
     const response = await fetch(`${baseUrl}/products`);

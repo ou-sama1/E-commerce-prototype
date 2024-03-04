@@ -15,7 +15,6 @@ const Pagination = (props) => {
     useEffect(()=>{
         //An array that start from 1 to the number of occupied pages
         setPages(Array((numberOfPages <= maxVisiblePages) ? numberOfPages : maxVisiblePages).fill().map((_, i) => i+1))
-        console.log("useEffect triggered")
     },[numberOfPages])
     
     const handlePagination = (page) => {

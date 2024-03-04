@@ -26,6 +26,10 @@ const cartSlice = createSlice({
             item[0].quantity++;
         },
         incrementItemBy : (state, action) => {
+            if(state.cart === null){
+                state.cart = [];
+            }
+            
             const item = state.cart.filter(item => item.id === action.payload.product.id)[0];
             if(item){
                 item.quantity += action.payload.quantity;

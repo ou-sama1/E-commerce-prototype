@@ -21,7 +21,7 @@ const Product = (props) => {
     }
 
     const goToDetail = (id) => {
-        navigate(`/products/${id}`);
+        navigate(`/product/${id}`);
     }
 
     return(
