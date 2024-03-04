@@ -1,6 +1,7 @@
 import styles from "./CartItem.module.css"
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cartSlice";
+import deleteIcon from '../../images/icon-delete.svg';
 
 const CartItem = (props) => {
     const {id, title, image, price, quantity} = props.item;
@@ -33,7 +34,7 @@ const CartItem = (props) => {
                         <span> {quantity} </span>
                         <button onClick={decrementHandler} className={styles.btn}>-</button>
                     </div>
-                    <button onClick={deleteHandler} className={styles.btnDel}><img src="/src/images/icon-delete.svg" /></button>
+                    <button onClick={deleteHandler} className={styles.btnDel}><img src={deleteIcon} /></button>
                 </div>
             </div>
         </li>
