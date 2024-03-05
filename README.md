@@ -1,7 +1,7 @@
-# E-commerce website prototype
-
 <h1> Sneakers </h1>
-This app is live at https://sneakers-y4qk.onrender.com/
+Very creative name i know, this is a MERN stack web application i made for the purpose of learning, its an e-commerce website for selling clothes, i did not focus on the design as much as i focused on the fonctionalities.
+
+You can access it here : https://sneakers-y4qk.onrender.com/
 
 ## Used technologies : 
 - ReactJS <br>
@@ -16,8 +16,7 @@ This app is live at https://sneakers-y4qk.onrender.com/
 - JWT <br>
 - ReCAPTCHA <br>
 - EmailJS <br>
-
-created using Vite for its fast development server ⚡
+- created using Vite ⚡<br>
 
 ## The website includes the following features :
 - Cart as a side modal 🛒 <br>
