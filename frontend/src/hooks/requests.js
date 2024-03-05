@@ -1,5 +1,5 @@
 
-const baseUrl = 'https://sneakers-api.onrender.com';
+const baseUrl = import.meta.env.VITE_BASE_URL;
 
 async function httpGetProducts(){
     const response = await fetch(`${baseUrl}/products`);
