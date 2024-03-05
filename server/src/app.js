@@ -21,7 +21,7 @@ app.use(helmet({
         );
 
 app.use(cors({
-    origin : "https://sneakers-y4qk.onrender.com/",
+    origin : "https://sneakers-y4qk.onrender.com",
 }));
 
 app.use(express.json());
