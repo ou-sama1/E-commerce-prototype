@@ -1,5 +1,8 @@
 # E-commerce website prototype
 
+<h1> Sneakers </h1>
+This app is live at https://sneakers-y4qk.onrender.com/
+
 ## Used technologies : 
 - ReactJS <br>
 	+ Redux toolkit <br>
