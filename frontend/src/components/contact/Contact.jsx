@@ -135,7 +135,7 @@ const Contact = () => {
                 <div className={styles.info}>
                     <img src={emailIcon} /> 
                     <span>Email</span>
-                    <p>xdooussama@gmail.com</p>
+                    <p>oussama.elbachiri0@gmail.com</p>
                 </div>
             </div>
             <div className={styles.messageForm}>
