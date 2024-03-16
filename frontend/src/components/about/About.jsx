@@ -8,7 +8,7 @@ const About = () => {
             <div className={styles.content}>
                 <section className={styles.section}>
                     <h3>Who Are We ?</h3>
-                    <p>Well, there is just 'me', I'm Oussama a fullstack developer from Morocco, you can find me <a target="_blank" href='https://www.linkedin.com/in/oussama-el-bachiri-86b616291'>Here</a></p>
+                    <p>Well, there is just 'me', I'm Oussama a fullstack developer from Morocco, you can find me <a target="_blank" href='https://www.linkedin.com/in/oussama-el-bachiri'>Here</a></p>
                 </section>
                 <section className={styles.section}>
                     <h3>Our Mission ?</h3>
